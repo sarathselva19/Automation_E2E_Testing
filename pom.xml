@@ -13,6 +13,7 @@
   <properties>
       <selenium.version>4.27.0</selenium.version>
       <webdrivermanager.version>5.9.2</webdrivermanager.version>
+      <restassured.version>5.3.0</restassured.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -38,6 +39,21 @@
           <artifactId>webdrivermanager</artifactId>
           <version>${webdrivermanager.version}</version>
       </dependency>
+
+    <!-- Rest Assured for REST API testing (test scope) -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${restassured.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Jackson for JSON serialization/deserialization -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version>
+    </dependency>
 
       <!-- TestNG for programmatic test runs -->
       <dependency>

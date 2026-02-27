@@ -39,4 +39,10 @@ public class FileIOTest extends Hooks {
 
     }
 
+    @Test
+    public void FileIoTest2()
+    {
+        System.out.println("FIleIOTest 2");
+    }
+
     }

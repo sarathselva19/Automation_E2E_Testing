@@ -49,4 +49,10 @@ public class StaleTest extends Hooks {
         System.out.println("Stale Test Ended");
 
     }
+
+    @Test
+    public void StaleTest2()
+    {
+        System.out.println("StaleTest 2");
+    }
 }
