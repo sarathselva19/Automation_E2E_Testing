@@ -1,5 +1,6 @@
 package com.combined.automation.presetClass;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,10 +12,9 @@ import java.util.HashMap;
 
 public class Hooks extends BaseClass {
 
-    //@Before
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() {
-        System.out.println("executing before suite");
+        System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] Initializing WebDriver");
         // Ensure geckodriver is available on the machine
         ChromeOptions options=new ChromeOptions();
         HashMap<String, Object> prefs = new HashMap<String, Object>();
@@ -31,73 +31,53 @@ public class Hooks extends BaseClass {
 
         options.setExperimentalOption("prefs", prefs);
 
-        // initialize WebDriver here so tests can reuse BaseClass.driver
-        driver = new ChromeDriver(options);
-        System.out.println("[Hooks] WebDriver initialized: " + driver);
+        // initialize WebDriver for this thread
+        WebDriver threadDriver = new ChromeDriver(options);
+        setDriver(threadDriver);  // Store in ThreadLocal
+        driver = threadDriver;    // Also keep for backward compatibility
+        System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] WebDriver initialized: " + threadDriver);
         System.out.println("[Hooks] Download path configured: " + downloadPath);
-        driver.manage().window().maximize();
+        threadDriver.manage().window().maximize();
     }
-        //@After
-    @AfterSuite
+
+    @AfterMethod
     public void tearDown() {
-        System.out.println("executing After suite");
-        System.out.println("[Hooks] tearDown invoked");
-        if (driver != null) {
+        System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] Tearing down WebDriver");
+        WebDriver threadDriver = getDriver();
+        if (threadDriver != null) {
             try {
-                driver.quit();
-            } catch (Exception ignored) {
+                threadDriver.quit();
+            } catch (Exception e) {
+                System.out.println("[Hooks] Error quitting driver: " + e.getMessage());
             } finally {
-                driver = null;
+                driverThreadLocal.remove();  // Clean up ThreadLocal
+                driver = null;                // Clean up static reference
             }
         }
-    }
-
-//    @BeforeSuite
-//    public void beforeSuite()
-//    {
-//        System.out.println("executing before suite");
-//    }
-
-    @BeforeTest
-    public void beforeTest()
-    {
-        System.out.println("executing before Test");
     }
 
     @BeforeClass
     public void beforeClasst()
     {
-        System.out.println("executing before class");
-    }
-
-    @BeforeMethod
-    public void beforeMethod()
-    {
-        System.out.println("executing before method");
-    }
-
-    @AfterMethod
-    public void afterMethod()
-    {
-        System.out.println("executing After method");
+        System.out.println("[BeforeClass] [Thread: " + Thread.currentThread().getName() + "] Executing before class");
     }
 
     @AfterClass
     public void afterClass()
     {
-        System.out.println("executing After class");
+        System.out.println("[AfterClass] [Thread: " + Thread.currentThread().getName() + "] Executing after class");
+    }
+
+    @BeforeTest
+    public void beforeTest()
+    {
+        System.out.println("[BeforeTest] [Thread: " + Thread.currentThread().getName() + "] Executing before test");
     }
 
     @AfterTest
     public void AfterTest()
     {
-        System.out.println("executing After Test");
+        System.out.println("[AfterTest] [Thread: " + Thread.currentThread().getName() + "] Executing after test");
     }
-
-//    @AfterSuite
-//    public void AfterSuite()
-//    {
-//        System.out.println("executing After suite");
-//    }
 
 }

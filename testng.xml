@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Combined Automation Framework" parallel="false" verbose="2">
-    <test name="Login Tests">
-        <classes>
-            <class name="com.combined.automation.stepDefinitions.LoginTest"/>
-            <class name="com.combined.automation.stepDefinitions.WebTable"/>
-            <class name="com.combined.automation.stepDefinitions.StaleTest"/>
-        </classes>
+<suite name="Combined Automation Framework" parallel="methods" thread-count="3" data-provider-thread-count="3" verbose="2">
+    <test name="All Tests">
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.stepDefinitions.LoginTest"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.WebTable"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.StaleTest"/>-->
+<!--        </classes>-->
+
+
+        <packages>
+            <!-- TestNG auto-discovers ALL test classes in this package -->
+            <package name="com.combined.automation.stepDefinitions"/>
+        </packages>
     </test>
 
 <!--    <test name="DropDown Tests">-->

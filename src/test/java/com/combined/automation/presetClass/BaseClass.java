@@ -4,6 +4,8 @@ import com.combined.automation.pageObjects.*;
 //import com.combined.automation.utilities.projectSpecific.GenericUtilitis;
 import com.combined.automation.stepDefinitions.FileIOTest;
 import com.combined.automation.utilities.GenericUtility;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,9 +13,20 @@ import java.io.File;
 
 public abstract class BaseClass {
 
+    // ThreadLocal for parallel execution support - protected so subclasses can access
+    protected static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
+    // Public getter for backward compatibility
+    public static WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
 
+    // Public setter for initialization
+    public static void setDriver(WebDriver webDriver) {
+        driverThreadLocal.set(webDriver);
+    }
 
+    // Public field for direct access (for backward compatibility)
     public static WebDriver driver;
     //public static BasePage currentPage;
     //public static GenericUtilitis gutils;
@@ -33,6 +46,11 @@ public abstract class BaseClass {
 
     public static GenericUtility gutils;
 
+    // API Variables
+
+    public static RequestSpecification gRequest;
+    public static Response gResponse;
+    public static String baseURL="https://restful-booker.herokuapp.com";
 
 
 }
