@@ -3,6 +3,7 @@ package com.combined.automation.stepDefinitions;
 import com.combined.automation.apiBuilder.Booking;
 import com.combined.automation.pageObjects.API.BookingBuilder1;
 import com.combined.automation.presetClass.BaseClass;
+import com.combined.automation.utilities.GenericUtility;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.Assert;
@@ -81,13 +82,16 @@ public class BookingAPI extends BaseClass {
         System.out.println("****************");
 
         gResponse=gRequest.post("/booking");
+
         System.out.println(gResponse.asPrettyString());
         System.out.println(gResponse.getStatusCode());
         Assert.assertEquals(gResponse.getStatusCode(),200);
         int bookingID=gResponse.jsonPath().getInt("bookingid");
         System.out.println(bookingID);
         Assert.assertEquals(gResponse.jsonPath().getString("booking.firstname"),booking.getFirstname());
-
+        schemaPath="jsonSchema/BookingJson.json";
+        isSchemaExpected= GenericUtility.validateResponseSchema(gResponse,schemaPath);
+        Assert.assertEquals(isSchemaExpected,true, "Schema is expected");
         //Assertion
         System.out.println("Actual "+ gResponse.jsonPath().getString("booking.firstname"));
         System.out.println("Expected "+ booking.getFirstname());
