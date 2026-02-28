@@ -1,6 +1,8 @@
 package com.combined.automation.utilities;
 
 import com.combined.automation.presetClass.BaseClass;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -77,6 +79,18 @@ public class GenericUtility extends BaseClass {
         }
 
 
+    }
+
+    public static boolean validateResponseSchema(Response response, String schemaFilePath) {
+        try {
+            JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaFilePath)
+                    .matches(response.asString());
+            System.out.println("Schema validation passed for: " + schemaFilePath);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Schema validation failed: " + e.getMessage());
+            return false;
+        }
     }
 
 
