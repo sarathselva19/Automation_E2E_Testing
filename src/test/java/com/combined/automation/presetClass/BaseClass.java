@@ -50,6 +50,8 @@ public abstract class BaseClass {
     public static RequestSpecification gRequest;
     public static Response gResponse;
     public static String baseURL="https://restful-booker.herokuapp.com";
+    public static String schemaPath;
+    public static boolean isSchemaExpected;
 
 
 }
