@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Combined Automation Framework"  data-provider-thread-count="3" verbose="2">
+<!--    parallel="methods" thread-count="3"-->
+    <listeners>
+        <listener class-name="com.combined.automation.Listeners.ExtentReportListener"/>
+    </listeners>
+
+    <test name="All Tests">
+
+        <classes>
+            <class name="com.combined.automation.stepDefinitions.API.BookingAPI"/>
+<!--            <class name="com.combined.automation.stepDefinitions.WebTable"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.StaleTest"/>-->
+        </classes>
+
+
+<!--        <packages>-->
+<!--            &lt;!&ndash; TestNG auto-discovers ALL test classes in this package &ndash;&gt;-->
+<!--            <package name="com.combined.automation.stepDefinitions.API"/>-->
+<!--        </packages>-->
+    </test>
+
+<!--    <test name="DropDown Tests">-->
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.stepDefinitions.DropDown">-->
+<!--                <methods>-->
+<!--                    <include name="dropDOwn"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="WebTable Tests">-->
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.stepDefinitions.WebTable">-->
+<!--                <methods>-->
+<!--                    <include name="webTable"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Stale Element Tests">-->
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.stepDefinitions.StaleTest">-->
+<!--                <methods>-->
+<!--                    <include name="staleTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Shadow Root Element Tests">-->
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.stepDefinitions.ShadowRootElement">-->
+<!--                <methods>-->
+<!--                    <include name="shadowRootHandle"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="App Tests">-->
+<!--        <classes>-->
+<!--            <class name="com.combined.automation.AppTest">-->
+<!--                <methods>-->
+<!--                    <include name="testApp"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
+

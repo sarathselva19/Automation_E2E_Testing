@@ -60,8 +60,15 @@
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>7.8.0</version>
-        <scope>test</scope>
+<!--        <scope>test</scope>-->
       </dependency>
+
+    <!-- Extent Reports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.1.1</version>
+    </dependency>
 
   </dependencies>
 
@@ -75,7 +82,7 @@
         <configuration>
           <reportsDirectory>${project.basedir}/test-output</reportsDirectory>
           <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
+            <suiteXmlFile>testng_API.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
