@@ -1,7 +1,7 @@
 package com.combined.automation.stepDefinitions.API;
 
-import com.combined.automation.apiBuilder.Booking;
 import com.combined.automation.pageObjects.API.BookingBuilder1;
+import com.combined.automation.apiBuilder.Booking;
 import com.combined.automation.presetClass.BaseClass;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
