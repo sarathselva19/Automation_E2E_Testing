@@ -1,11 +1,9 @@
 package com.combined.automation.stepDefinitions;
 
-import com.combined.automation.pageObjects.DeepDivePage;
-import com.combined.automation.presetClass.BaseClass;
+import com.combined.automation.pageObjects.UI.DeepDivePage;
 import com.combined.automation.presetClass.Hooks;
 import com.combined.automation.utilities.GenericUtility;
 import org.testng.annotations.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 

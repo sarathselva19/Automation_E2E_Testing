@@ -1,12 +1,7 @@
-package com.combined.automation.pageObjects;
+package com.combined.automation.pageObjects.UI;
 
-import com.combined.automation.presetClass.BaseClass;
-import net.bytebuddy.implementation.bind.annotation.Super;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 

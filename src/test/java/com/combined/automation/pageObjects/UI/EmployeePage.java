@@ -1,7 +1,5 @@
-package com.combined.automation.pageObjects;
+package com.combined.automation.pageObjects.UI;
 
-import com.combined.automation.presetClass.BaseClass;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

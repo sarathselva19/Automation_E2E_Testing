@@ -11,7 +11,7 @@
 
         <packages>
             <!-- TestNG auto-discovers ALL test classes in this package -->
-            <package name="com.combined.automation.stepDefinitions"/>
+            <package name="com.combined.automation.stepDefinitions.UI"/>
         </packages>
     </test>
 

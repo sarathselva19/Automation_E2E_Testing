@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.API;
 
 import com.combined.automation.apiBuilder.Booking;
 import com.combined.automation.pageObjects.API.BookingBuilder1;

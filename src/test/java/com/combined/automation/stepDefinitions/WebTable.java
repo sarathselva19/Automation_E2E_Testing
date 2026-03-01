@@ -1,13 +1,10 @@
 package com.combined.automation.stepDefinitions;
 
-import com.combined.automation.pageObjects.DeepDivePage;
-import com.combined.automation.pageObjects.WebTablePage;
+import com.combined.automation.pageObjects.UI.WebTablePage;
 import com.combined.automation.presetClass.Hooks;
 import com.combined.automation.utilities.GenericUtility;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class WebTable extends Hooks {
 

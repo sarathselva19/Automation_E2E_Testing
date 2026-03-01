@@ -1,6 +1,6 @@
 package com.combined.automation.stepDefinitions;
 
-import com.combined.automation.pageObjects.DeepDivePage;
+import com.combined.automation.pageObjects.UI.DeepDivePage;
 import com.combined.automation.presetClass.Hooks;
 import com.combined.automation.utilities.GenericUtility;
 import org.testng.annotations.Test;
