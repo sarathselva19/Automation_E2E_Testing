@@ -1,8 +1,8 @@
 package com.combined.automation.stepDefinitions;
 
-import com.combined.automation.pageObjects.EmployeePage;
-import com.combined.automation.pageObjects.HomePage;
-import com.combined.automation.pageObjects.LoginPage;
+import com.combined.automation.pageObjects.UI.EmployeePage;
+import com.combined.automation.pageObjects.UI.HomePage;
+import com.combined.automation.pageObjects.UI.LoginPage;
 import com.combined.automation.presetClass.Hooks;
 import org.testng.annotations.Test;
 

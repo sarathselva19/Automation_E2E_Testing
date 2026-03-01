@@ -1,15 +1,14 @@
 package com.combined.automation.presetClass;
 
-import com.combined.automation.pageObjects.*;
 //import com.combined.automation.utilities.projectSpecific.GenericUtilitis;
+import com.combined.automation.pageObjects.UI.*;
 import com.combined.automation.stepDefinitions.FileIOTest;
 import com.combined.automation.utilities.GenericUtility;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-import java.io.File;
+        import java.io.File;
 
 public abstract class BaseClass {
 

@@ -1,16 +1,12 @@
 package com.combined.automation.stepDefinitions;
 
-import com.combined.automation.pageObjects.StalePage;
-import com.combined.automation.pageObjects.WebTablePage;
-import com.combined.automation.presetClass.BaseClass;
+import com.combined.automation.pageObjects.UI.StalePage;
 import com.combined.automation.presetClass.Hooks;
 import com.combined.automation.utilities.GenericUtility;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static com.combined.automation.presetClass.BaseClass.driver;
-import static com.combined.automation.presetClass.BaseClass.webtable;
 import static org.openqa.selenium.By.id;
 
 public class StaleTest extends Hooks {
