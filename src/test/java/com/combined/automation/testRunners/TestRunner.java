@@ -4,7 +4,7 @@
 //import org.junit.runners.Suite;
 //
 //import com.combined.automation.AppTest;
-//import com.combined.automation.stepDefinitions.LoginTest;
+//import com.combined.automation.stepDefinitions.UI.LoginTest;
 //
 ///**
 // * Test runner suite to execute all tests.

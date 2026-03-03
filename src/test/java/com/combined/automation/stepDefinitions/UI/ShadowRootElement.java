@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 
 import com.combined.automation.pageObjects.UI.DeepDivePage;
 import com.combined.automation.presetClass.Hooks;
@@ -13,12 +13,12 @@ public class ShadowRootElement extends Hooks {
 
     @Test
     public void shadowRootHandle() throws InterruptedException {
-        driver.get("https://books-pwakit.appspot.com/");
+        getDriver().get("https://books-pwakit.appspot.com/");
 
         deepDivePage=new DeepDivePage();
         gutils=new GenericUtility();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         SearchContext shadowRootElement=deepDivePage.shadowHost.getShadowRoot();
         shadowRootElement.findElement(By.cssSelector("input[id='input']")).sendKeys("Hi Test");

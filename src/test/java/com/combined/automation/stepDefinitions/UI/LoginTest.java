@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 
 import com.combined.automation.pageObjects.UI.EmployeePage;
 import com.combined.automation.pageObjects.UI.HomePage;
@@ -15,7 +15,7 @@ public class LoginTest extends Hooks {
 //    driver.findElement(By.xpath("//input[@id='username']")).sendKeys("tomsmith");
 //    driver.findElement(By.xpath("//input[@id='password']")).sendKeys("SuperSecretPassword!");
 //    driver.findElement(By.xpath("//button[@class='radius']")).click();
-        driver.navigate().to("http://eaapp.somee.com/");
+        getDriver().navigate().to("http://eaapp.somee.com/");
        homePage=new HomePage();
         //LoginPage login=new LoginPage(); -->this line of code is removed as calling the method returns the required login page object
        // LoginPage login= hmpage.clickLoginLink(); --> Symplified this link using the curret page declaration in base class

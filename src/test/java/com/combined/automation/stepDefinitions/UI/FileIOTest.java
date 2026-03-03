@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 import com.combined.automation.pageObjects.UI.DeepDivePage;
 import com.combined.automation.presetClass.BaseClass;
 import com.combined.automation.presetClass.Hooks;
@@ -12,12 +12,12 @@ public class FileIOTest extends Hooks {
 
     @Test
     public void fileIOTest() throws InterruptedException {
-        driver.get("https://the-internet.herokuapp.com/download");
+        getDriver().get("https://the-internet.herokuapp.com/download");
         https://the-internet.herokuapp.com/download
         Thread.sleep(3000);
         deepDivePage=new DeepDivePage();
         gutils=new GenericUtility();
-        gutils.elementIsClickable(driver,deepDivePage.fileDownloadLink,20);
+        gutils.elementIsClickable(getDriver(),deepDivePage.fileDownloadLink,20);
         deepDivePage.fileDownloadLink.click();
         //System.out.println("File downloaded successfully");
         Thread.sleep(10000);

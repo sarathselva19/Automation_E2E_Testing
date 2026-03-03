@@ -11,7 +11,7 @@ public class StalePage extends BaseClass {
     public StalePage()
     {
 
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     //https://omayo.blogspot.com/
@@ -29,7 +29,7 @@ public class StalePage extends BaseClass {
         Thread.sleep(2000);
         textArea.sendKeys("Test text");
         onlyTestingLink.click();
-        driver.navigate().back();
+        getDriver().navigate().back();
         Thread.sleep(1000);
         textArea.clear();
 
@@ -41,6 +41,6 @@ public class StalePage extends BaseClass {
     public WebElement dynamicElement()
     {
 
-        return driver.findElement(By.xpath("//table[@id='courses_table']/descendant::td[text()='"+course+"']/preceding-sibling::td"));
+        return getDriver().findElement(By.xpath("//table[@id='courses_table']/descendant::td[text()='"+course+"']/preceding-sibling::td"));
     }
 }
