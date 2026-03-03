@@ -13,7 +13,7 @@ public class WebTablePage extends BaseClass {
     public WebTablePage()
     {
 
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     @FindBy(xpath = "//table[@id='courses_table']/thead/tr/th")
@@ -23,7 +23,7 @@ public class WebTablePage extends BaseClass {
     public WebElement dynamicElement()
     {
 
-        return driver.findElement(By.xpath("//table[@id='courses_table']/descendant::td[text()='"+course+"']/preceding-sibling::td"));
+        return getDriver().findElement(By.xpath("//table[@id='courses_table']/descendant::td[text()='"+course+"']/preceding-sibling::td"));
     }
 
 }

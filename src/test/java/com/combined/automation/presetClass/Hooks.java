@@ -32,26 +32,26 @@ public class Hooks extends BaseClass {
         options.setExperimentalOption("prefs", prefs);
 
         // initialize WebDriver for this thread
-        WebDriver threadDriver = new ChromeDriver(options);
-        setDriver(threadDriver);  // Store in ThreadLocal
-        driver = threadDriver;    // Also keep for backward compatibility
-        System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] WebDriver initialized: " + threadDriver);
+        WebDriver driver = new ChromeDriver(options);
+        setDriver(driver);  // Store in ThreadLocal
+        //getDriver() = threadDriver;    // Also keep for backward compatibility
+        System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] WebDriver initialized: " + getDriver());
         System.out.println("[Hooks] Download path configured: " + downloadPath);
-        threadDriver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
     @AfterMethod
     public void tearDown() {
         System.out.println("[Hooks] [Thread: " + Thread.currentThread().getName() + "] Tearing down WebDriver");
-        WebDriver threadDriver = getDriver();
-        if (threadDriver != null) {
+        //WebDriver threadDriver = getDriver();
+        if (getDriver() != null) {
             try {
-                threadDriver.quit();
+                getDriver().quit();
             } catch (Exception e) {
                 System.out.println("[Hooks] Error quitting driver: " + e.getMessage());
             } finally {
-                driverThreadLocal.remove();  // Clean up ThreadLocal
-                driver = null;                // Clean up static reference
+                driver.remove(); // Clean up ThreadLocal
+                //driver = null;                // Clean up static reference
             }
         }
     }

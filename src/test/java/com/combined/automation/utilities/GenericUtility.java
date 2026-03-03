@@ -44,7 +44,7 @@ public class GenericUtility extends BaseClass {
             while(attempt<=3)
             {
                 try {
-                    driver.findElement(by).clear();
+                    getDriver().findElement(by).clear();
                     System.out.println("cleared successfully");
                     break;
                 }

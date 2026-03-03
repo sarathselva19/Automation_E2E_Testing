@@ -3,7 +3,7 @@
 <suite name="Combined Automation Framework" parallel="false" verbose="2">
     <test name="Login Tests">
         <classes>
-            <class name="com.combined.automation.stepDefinitions.LoginTest">
+            <class name="com.combined.automation.stepDefinitions.UI.LoginTest">
                 <methods>
                     <include name="login"/>
                 </methods>
@@ -13,7 +13,7 @@
 
     <test name="DropDown Tests">
         <classes>
-            <class name="com.combined.automation.stepDefinitions.DropDown">
+            <class name="com.combined.automation.stepDefinitions.UI.DropDown">
                 <methods>
                     <include name="dropDOwn"/>
                 </methods>
@@ -23,7 +23,7 @@
 
     <test name="WebTable Tests">
         <classes>
-            <class name="com.combined.automation.stepDefinitions.WebTable">
+            <class name="com.combined.automation.stepDefinitions.UI.WebTable">
                 <methods>
                     <include name="webTable"/>
                 </methods>
@@ -33,7 +33,7 @@
 
     <test name="Stale Element Tests">
         <classes>
-            <class name="com.combined.automation.stepDefinitions.StaleTest">
+            <class name="com.combined.automation.stepDefinitions.UI.StaleTest">
                 <methods>
                     <include name="staleTest"/>
                 </methods>
@@ -43,7 +43,7 @@
 
     <test name="Shadow Root Element Tests">
         <classes>
-            <class name="com.combined.automation.stepDefinitions.ShadowRootElement">
+            <class name="com.combined.automation.stepDefinitions.UI.ShadowRootElement">
                 <methods>
                     <include name="shadowRootHandle"/>
                 </methods>

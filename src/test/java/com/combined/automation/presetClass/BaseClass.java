@@ -2,7 +2,7 @@ package com.combined.automation.presetClass;
 
 //import com.combined.automation.utilities.projectSpecific.GenericUtilitis;
 import com.combined.automation.pageObjects.UI.*;
-import com.combined.automation.stepDefinitions.FileIOTest;
+import com.combined.automation.stepDefinitions.UI.FileIOTest;
 import com.combined.automation.utilities.GenericUtility;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -13,20 +13,20 @@ import org.openqa.selenium.WebDriver;
 public abstract class BaseClass {
 
     // ThreadLocal for parallel execution support - protected so subclasses can access
-    protected static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    protected static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     // Public getter for backward compatibility
     public static WebDriver getDriver() {
-        return driverThreadLocal.get();
+        return driver.get();
     }
 
     // Public setter for initialization
     public static void setDriver(WebDriver webDriver) {
-        driverThreadLocal.set(webDriver);
+        driver.set(webDriver);
     }
 
     // Public field for direct access (for backward compatibility)
-    public static WebDriver driver;
+    //public static WebDriver driver;
     //public static BasePage currentPage;
     //public static GenericUtilitis gutils;
 

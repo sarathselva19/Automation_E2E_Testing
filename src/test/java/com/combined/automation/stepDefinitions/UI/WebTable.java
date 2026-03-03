@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 
 import com.combined.automation.pageObjects.UI.WebTablePage;
 import com.combined.automation.presetClass.Hooks;
@@ -10,7 +10,7 @@ public class WebTable extends Hooks {
 
     @Test
     public void webTable() throws InterruptedException {
-        driver.get("https://practicetestautomation.com/practice-test-table/");
+        getDriver().get("https://practicetestautomation.com/practice-test-table/");
 
         webtable = new WebTablePage();
       //List<WebElement> header;

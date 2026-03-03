@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Combined Automation Framework" parallel="methods" thread-count="3" data-provider-thread-count="3" verbose="2">
+    <listeners>
+        <listener class-name="com.combined.automation.Listeners.ExtentReportListener"/>
+    </listeners>
+
     <test name="All Tests">
 <!--        <classes>-->
-<!--            <class name="com.combined.automation.stepDefinitions.LoginTest"/>-->
-<!--            <class name="com.combined.automation.stepDefinitions.WebTable"/>-->
-<!--            <class name="com.combined.automation.stepDefinitions.StaleTest"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.LoginTest"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.WebTable"/>-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.StaleTest"/>-->
 <!--        </classes>-->
 
 
@@ -17,7 +21,7 @@
 
 <!--    <test name="DropDown Tests">-->
 <!--        <classes>-->
-<!--            <class name="com.combined.automation.stepDefinitions.DropDown">-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.DropDown">-->
 <!--                <methods>-->
 <!--                    <include name="dropDOwn"/>-->
 <!--                </methods>-->
@@ -27,7 +31,7 @@
 
 <!--    <test name="WebTable Tests">-->
 <!--        <classes>-->
-<!--            <class name="com.combined.automation.stepDefinitions.WebTable">-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.WebTable">-->
 <!--                <methods>-->
 <!--                    <include name="webTable"/>-->
 <!--                </methods>-->
@@ -37,7 +41,7 @@
 
 <!--    <test name="Stale Element Tests">-->
 <!--        <classes>-->
-<!--            <class name="com.combined.automation.stepDefinitions.StaleTest">-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.StaleTest">-->
 <!--                <methods>-->
 <!--                    <include name="staleTest"/>-->
 <!--                </methods>-->
@@ -47,7 +51,7 @@
 
 <!--    <test name="Shadow Root Element Tests">-->
 <!--        <classes>-->
-<!--            <class name="com.combined.automation.stepDefinitions.ShadowRootElement">-->
+<!--            <class name="com.combined.automation.stepDefinitions.UI.ShadowRootElement">-->
 <!--                <methods>-->
 <!--                    <include name="shadowRootHandle"/>-->
 <!--                </methods>-->

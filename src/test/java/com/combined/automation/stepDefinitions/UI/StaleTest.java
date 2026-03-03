@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 
 import com.combined.automation.pageObjects.UI.StalePage;
 import com.combined.automation.presetClass.Hooks;
@@ -13,7 +13,7 @@ public class StaleTest extends Hooks {
 
     @Test
     public void staleTest() throws InterruptedException {
-        driver.get("https://omayo.blogspot.com/");
+        getDriver().get("https://omayo.blogspot.com/");
 
         stale = new StalePage();
         System.out.println("Stale Test Started");
@@ -26,12 +26,12 @@ public class StaleTest extends Hooks {
 //        stale.textArea.clear();
 //        Thread.sleep(2000);
 
-        WebElement staleElement = driver.findElement(id("ta1"));
+        WebElement staleElement = getDriver().findElement(id("ta1"));
         staleElement.sendKeys("Test text");
         Thread.sleep(1000);
         stale.onlyTestingLink.click();
         Thread.sleep(2000);
-        driver.navigate().back();
+        getDriver().navigate().back();
 
         Thread.sleep(1000);
         // staleElement.clear();

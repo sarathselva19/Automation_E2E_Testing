@@ -1,4 +1,4 @@
-package com.combined.automation.stepDefinitions;
+package com.combined.automation.stepDefinitions.UI;
 
 import com.combined.automation.pageObjects.UI.DeepDivePage;
 import com.combined.automation.presetClass.Hooks;
@@ -15,13 +15,13 @@ import java.util.Set;
 public class DropDown extends Hooks {
     @Test
     public void dropDOwn() throws InterruptedException {
-        driver.get("https://demowebshop.tricentis.com/");
+        getDriver().get("https://demowebshop.tricentis.com/");
 
         deepDivePage=new DeepDivePage();
         gutils=new GenericUtility();
-        gutils.elementIsClickable(driver,deepDivePage.bookOptions,20);
+        gutils.elementIsClickable(getDriver(),deepDivePage.bookOptions,20);
         deepDivePage.bookOptions.click();
-        gutils.elementIsClickable(driver,deepDivePage.dropdownWebShop,20);
+        gutils.elementIsClickable(getDriver(),deepDivePage.dropdownWebShop,20);
         deepDivePage.dropdownWebShop.click();
         Thread.sleep(1000);
 
